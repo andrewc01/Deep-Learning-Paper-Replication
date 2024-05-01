@@ -105,11 +105,11 @@ def ResNet152(img_channels=3, num_classes=1000):
 
 def get_default_device():
     if torch.cuda.is_available():
-        return torch.device('cuda')
+        return torch.device('cuda') # nvidia gpu
     elif torch.backends.mps.is_available():
         return torch.device('mps') # apple silicon gpu
     else:
-        return torch.device('cpu') 
+        return torch.device('cpu') # default
     
 def test():
     network = ResNet50()
